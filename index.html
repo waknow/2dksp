@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Orbit Demo</title>
+</head>
+<body>
+    <div id="info">
+        <div>SPACE = Launch | R = Reset</div>
+        <div>1/2/3/4 = Time Scale | Wheel = Zoom</div>
+        <hr/>
+        <div class="controls">
+            <label>Initial Velocity: <span id="vVal">80</span>
+                <input type="range" id="vSlider" min="10" max="250" value="80">
+            </label>
+            <br/>
+            <label>Planet Mass: <span id="mVal">10000</span>
+                <input type="range" id="mSlider" min="1000" max="50000" value="10000">
+            </label>
+            <hr/>
+            <label>Integrator:
+                <select id="integratorSelect">
+                    <option value="Euler">Explicit Euler</option>
+                    <option value="SemiEuler" selected>Semi-implicit Euler</option>
+                    <option value="Verlet">Velocity Verlet</option>
+                    <option value="Leapfrog">Leapfrog</option>
+                </select>
+            </label>
+            <br/>
+            <label>Physics Step: <span id="stepVal">240</span> Hz
+                <input type="range" id="stepSlider" min="30" max="1000" value="240">
+            </label>
+            <br/>
+            <label>Prediction Time: <span id="predTimeVal">20</span>s
+                <input type="range" id="predTimeSlider" min="1" max="100" value="20">
+            </label>
+        </div>
+    </div>
+    <canvas id="game"></canvas>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
